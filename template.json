@@ -1,0 +1,47 @@
+{   
+    "likednya": {
+        "type": "flex",
+        "altText": "Post Liked..",
+        "contents": {
+            "type": "bubble",
+            "body": {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                    {
+                        "type": "text",
+                        "text": "Post Liked",
+                        "color": "#000000",
+                        "align": "center",
+                        "weight":"bold",
+                        "wrap": true
+                    }
+                ]
+            },
+            "footer": {
+                "type": "box",
+                "layout": "horizontal",
+                "action": {
+                   "type": "uri",
+                   "uri": "line://ti/p/%40175qduzr"
+               },
+               "contents": [
+                   {
+                        "type": "text",
+                        "text": "yudarea",
+                        "weight": "bold",
+                        "color": "#ffffff",
+                        "align": "center"
+                   }
+                ]   
+            },
+            "styles": {
+                "body": {
+                    "backgroundColor": "#ffda6b"
+                },
+                "footer": {
+                    "backgroundColor": "#f9bb00"
+                }
+            }
+        }
+    }
