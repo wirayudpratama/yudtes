@@ -21,8 +21,8 @@ except:
         lg.write(client.authToken)
 #===================================open codec===========================================#
 
-plates = codecs.open("template.json","r","utf-8")
-plate = json.load(plates)
+#plates = codecs.open("template.json","r","utf-8")
+#plate = json.load(plates)
 
 #client = LINE()
 #client = LINE("Token")
@@ -36,15 +36,15 @@ lineSettings = client.getSettings()
 oepoll = OEPoll(client)
 botStart = time.time()
 #=============[ DATA STREAM ]=====================================================================================
-with open('settings.json','r') as stg:settings = json.load(stg)
-client={"changepicture":False}
-def setback():                                                                                                   
-    with open('settings.json','w') as sb:json.dump(settings, sb, sort_keys=True, indent=4, ensure_ascii=False)
-try:                                                                                                             
-    with open("Log_data.json","r",encoding="utf_8_sig") as f:                                                    
-        msg_dict = json.loads(f.read())                                                                          
-except:                                                                                                          
-    print("Couldn't Read Log Data")             
+#with open('settings.json','r') as stg:settings = json.load(stg)
+#client={"changepicture":False}
+#def setback():                                                                                                   
+#    with open('settings.json','w') as sb:json.dump(settings, sb, sort_keys=True, indent=4, ensure_ascii=False)
+#try:                                                                                                             
+#    with open("Log_data.json","r",encoding="utf_8_sig") as f:                                                    
+#        msg_dict = json.loads(f.read())                                                                          
+#except:                                                                                                          
+#    print("Couldn't Read Log Data")             
 #==================================================
 protectqr = []
 protectkick = []
@@ -162,6 +162,70 @@ limit = {
     'batas': "5",
     'user':{}
     }
+
+settings =   {
+    "limituser": {},
+    "welcomemsg": True,
+    #"Leavemsg": False,
+    "autoAdd": True,
+    "autoJoin": True,
+    "autoLike":True,
+    "autoLeave": False,
+    "autoCancel":{"on":True,"members":10},
+    "autoRead": False,
+    "autoRespon": False,
+    "autoJoinTicket": True,
+    "checkContact": False,
+    "checkPost": False,
+    "checkSticker": False,
+    "changePictureProfile": False,
+    "changeGroupPicture": [],
+    "comment": "lsb #yudarea",
+    "blacklist":{},
+    #"welcome": "Selamat datang",
+    #"leave": "Bye bye",
+    "autoAddMessage": "Thank for add\n\ninvite me to your group",
+    "autRespo"
+    "keyCommand": "",
+    "myProfile": {
+        "displayName": "",
+        "coverId": "",
+        "pictureStatus": "",
+        "statusMessage": ""
+    },
+    "mimic": {
+        "copy": False,
+        "status": False,
+        "target": {}
+    },
+    "setKey": False,
+    "unsendMessage": False,
+    "restartPoint": {},
+    "server": "VPS",
+    "target": {},
+    "userAgent": [
+        "Mozilla/5.0 (X11; U; Linux i586; de; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (X11; U; Linux amd64; rv:5.0) Gecko/20100101 Firefox/5.0 (Debian)",
+        "Mozilla/5.0 (X11; U; Linux amd64; en-US; rv:5.0) Gecko/20110619 Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux) Gecko Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux x86_64; rv:5.0) Gecko/20100101 Firefox/5.0 FirePHP/0.5",
+        "Mozilla/5.0 (X11; Linux x86_64; rv:5.0) Gecko/20100101 Firefox/5.0 Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux x86_64) Gecko Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux ppc; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux AMD64) Gecko Firefox/5.0",
+        "Mozilla/5.0 (X11; FreeBSD amd64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:5.0) Gecko/20110619 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.1; rv:6.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.1.1; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.2; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.1; U; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.1; rv:2.0.1) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.0; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.0; rv:5.0) Gecko/20100101 Firefox/5.0"
+    ]
+}
 
 wait2 = {
     'readPoint':{},
@@ -3899,13 +3963,13 @@ def clientBot(op):
                 
         
         if msg.contentType == 16:
-            if settings["autolike"]==True:
+            if settings["autLike"]==True:
                 url_post = msg.contentMetadata['postEndUrl']
                 pliter = url_post.replace('line://home/post?userMid=','')
                 pliter = pliter.split('&postId=')
                 client.likePost(mid=pliter[0],postId=pliter[1])
                 client.createComment(mid=pliter[0],postId=pliter[1],text=settings["comment"])
-                client.sendFlex(receiver, plate["likednya"])
+                #client.sendFlex(receiver, plate["likednya"])
                 print ("Post Liked")
         
         if op.type == 55:
