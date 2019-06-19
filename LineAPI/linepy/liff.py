@@ -16,7 +16,7 @@ class Liff(object):
     def issueLiffView(self, to):
         az = LiffChatContext(to)
         ax = LiffContext(chat=az)
-        lf = LiffViewRequest('1623679774-k9nBDB6b', ax)
+        lf = LiffViewRequest('1602687308-GXq4Vvk9', ax)
         return self.liff.issueLiffView(lf)
     @loggedIn
     def sendFlex(self, to, data):
@@ -35,7 +35,7 @@ class Liff(object):
     def issueLiffSquareView(self, to):
         az = LiffSquareChatContext(to)
         ax = LiffContext(squareChat=az)
-        lf = LiffViewRequest('1623679774-k9nBDB6b', ax)
+        lf = LiffViewRequest('1602687308-GXq4Vvk9', ax)
         return self.liff.issueLiffView(lf)
     @loggedIn
     def postSquareTemplate(self, to, data):
