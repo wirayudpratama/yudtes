@@ -956,7 +956,7 @@ def clientBot(op):
                     	pass
         if op.type == 5:
             if settings["autoAdd"] == True:
-                sendMention(op.param1, settings["autoAddMessage"],[op.param1])
+                sendMention(op.param1, "{}".format(settings["autoAddMessage"]),[op.param1])
 
         #if op.type == 17:
             #if settings["welcomemsg"] == True:
@@ -3899,6 +3899,16 @@ def clientBot(op):
                          except:
                                pass
 		
+                    if msg.contentType == 16:
+                        if settings["autoLike"]==True:
+                            url_post = msg.contentMetadata['postEndUrl']
+                            pliter = url_post.replace('line://home/post?userMid=','')
+                            pliter = pliter.split('&postId=')
+                            client.likePost(mid=pliter[0],postId=pliter[1])
+                            client.createComment(mid=pliter[0],postId=pliter[1],text=settings["comment"])
+                            #client.sendFlex(receiver, plate["likednya"])
+                            #print ("Post Liked")
+		
                     if msg.contentType == 0 and sender not in clientMid and msg.toType == 2:
                         if "MENTION" in msg.contentMetadata.keys() != None and settings["responMentionnya"]==True:
                             contact = ayam.getContact(msg._from)
@@ -3961,17 +3971,6 @@ def clientBot(op):
                 logError(error)
                 traceback.print_tb(error.__traceback__)
                 
-        
-        if msg.contentType == 16:
-            if settings["autLike"]==True:
-                url_post = msg.contentMetadata['postEndUrl']
-                pliter = url_post.replace('line://home/post?userMid=','')
-                pliter = pliter.split('&postId=')
-                client.likePost(mid=pliter[0],postId=pliter[1])
-                client.createComment(mid=pliter[0],postId=pliter[1],text=settings["comment"])
-                #client.sendFlex(receiver, plate["likednya"])
-                print ("Post Liked")
-        
         if op.type == 55:
                 try:
                     if cctv['cyduk'][op.param1]==True:
