@@ -185,7 +185,7 @@ settings =   {
     #"welcome": "Selamat datang",
     #"leave": "Bye bye",
     "autoAddMessage": "Thank for add\n\ninvite me to your group",
-    "autRespo"
+    "autoResponMention": True,
     "keyCommand": "",
     "myProfile": {
         "displayName": "",
@@ -3911,7 +3911,7 @@ def clientBot(op):
 		
                     if msg.contentType == 0 and sender not in clientMid and msg.toType == 2:
                         if "MENTION" in msg.contentMetadata.keys() != None and settings["responMentionnya"]==True:
-                            contact = ayam.getContact(msg._from)
+                            contact = client.getContact(msg._from)
                             cName = contact.displayName
                             text = msg.text
                             balas = ["gaush tag tag"]
@@ -3920,7 +3920,7 @@ def clientBot(op):
                             mentionees = mention["MENTIONEES"]
                             pesannya = {
                                     "type": "flex",
-                                    "altText": "{} Mengirim Tanggapan Mention".format(str(ayam.getContact(ayamMid).displayName)),
+                                    "altText": "yudarea",#.format(str(client.getContact(clientMid).displayName)),
                                     "contents": {
                                         "type": "bubble",
                                         "body": {
