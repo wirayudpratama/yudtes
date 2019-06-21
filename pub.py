@@ -163,6 +163,51 @@ limit = {
     'user':{}
     }
 
+wait = {
+    'limit':{},
+    'contact':False,
+    'autoJoin':True,
+    'sticker':False,
+    'autoCancel':{"on":True,"members":10},
+    "spam":{},
+    "detectMention":False,
+    "Members":1,
+    "wordban":{},
+    'leaveRoom':True,
+    'likeOn':True,
+    'comment1':"Auto Like By http://line.me/ti/p/%40175qduzr",
+    'timeline':True,
+    'autoAdd':True,
+    'atjointicket':True,
+    "alwaysRead":True,
+    "linkticket":False,
+    "cpp":False,
+    "cpg":False,
+    'message':"тнαикѕ fσя α∂∂ мє! му ¢яєαтσя ιѕ http://line.me/ti/p/%40175qduzr",
+    "lang":"JP",
+    "comment":"тнαикѕ fσя α∂∂ мє! му ¢яєαтσя ιѕ http://line.me/ti/p/%40175qduzr",
+    "commenty":"Auto Like by yudha\n\nhttp://line.me/ti/p/%40ish7215m",
+    "commentOn":True,
+    "commentBlack":{},
+    "wblack":False,
+    "dblack":False,
+    "clock":False,
+    "cName":" ",
+    "blacklist":{},
+    "whitelist":{},
+    "wblacklist":False,
+    "dblacklist":False,
+    "teman":{},
+    "winvite":False,
+    "likeOn":True,
+    "protection":False,
+    "welcomemsg":True,
+    "welmsg":" welcome to ",
+    "pname":{},
+    "pro_name":{},
+    "Pap":{}
+    }
+
 settings =   {
     "limituser": {},
     "welcomemsg": True,
@@ -969,7 +1014,7 @@ def clientBot(op):
             client.acceptGroupInvitation(op.param1)
             pesannya = {
                 "type": "template",
-                "altText": "{} Mengirim Sticker".format(str(client.getContact(clientMid).displayName)),
+                "altText": "yudarea",#.format(str(client.getContact(clientMid).displayName)),
                 "baseSize": {
                     "height": 1040,
                     "width": 1040
@@ -980,7 +1025,7 @@ def clientBot(op):
                         "imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/177796075/IOS/sticker.png",
                         "action": {
                             "type": "uri",
-                            "uri": "line://shop/detail/7384106",
+                            "uri": "line://ti/p/%40175qduzr",
                             "area": {
                                 "x": 520,
                                 "y": 0,
@@ -992,12 +1037,12 @@ def clientBot(op):
                 }
             }
             client.sendFlex(op.param1,pesannya)
-            print ("Kam Showed")
+            #print ("Kam Showed")
         if op.type == 15 and settings["welcomemsg"]==True or op.type == 19 and settings["welcomemsg"]==True:
             client.acceptGroupInvitation(op.param1)
             pesannya = {
                 "type": "template",
-                "altText": "{} Mengirim Sticker".format(str(client.getContact(clientMid).displayName)),
+                "altText": "yudarea",#.format(str(client.getContact(clientMid).displayName)),
                 "baseSize": {
                     "height": 1040,
                     "width": 1040
@@ -1008,7 +1053,7 @@ def clientBot(op):
                         "imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/177796076/IOS/sticker.png",
                         "action": {
                             "type": "uri",
-                            "uri": "line.me/ti/p/%40175qduzr",
+                            "uri": "line://ti/p/%40175qduzr",
                             "area": {
                                 "x": 520,
                                 "y": 0,
@@ -3719,10 +3764,10 @@ def clientBot(op):
                                    A = hasil.text
                                    client.sendMessage(to, str(A))
 #================[ sticker ]===============
-                        if cmd in ['hi','halo','hai','hy','hay','haii','helo','hello','hey']:  
+                        if cmd in ['halo','hi','hy','hay','haii','helo','hello','hey']:  
                             pesannya = {
                                 "type": "template",
-                                "altText": "{} Mengirim Sticker".format(str(client.getContact(clientMid).displayName)),
+                                "altText": "yudarea",#.format(str(client.getContact(clientMid).displayName)),
                                 "baseSize": {
                                     "height": 1040,
                                     "width": 1040
@@ -3733,7 +3778,33 @@ def clientBot(op):
                                     "imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/52002768/IOS/sticker_animation@2x.png",
                                     "action": {
                                         "type": "uri",
-                                        "uri": "line.me/ti/p/%40175qduzr",
+                                        "uri": "line://ti/p/%40175qduzr",
+                                        "area": {
+                                            "x": 520,
+                                            "y": 0,
+                                            "width": 520,
+                                            "height": 1040
+                                        }
+                                    }
+                                }]
+                                }
+                            }
+                            client.sendFlex(msg.to,pesannya)
+                        if cmd in ['wkwk','wkwkwk']:  
+                            pesannya = {
+                                "type": "template",
+                                "altText": "yudarea",#.format(str(client.getContact(clientMid).displayName)),
+                                "baseSize": {
+                                    "height": 1040,
+                                    "width": 1040
+                                },
+                                "template": {
+                                "type": "image_carousel",
+                                "columns": [{
+                                    "imageUrl": "https://stickershop.line-scdn.net/stickershop/v1/sticker/27695296/IOS/sticker_animation@2x.png",
+                                    "action": {
+                                        "type": "uri",
+                                        "uri": "line://ti/p/%40175qduzr",
                                         "area": {
                                             "x": 520,
                                             "y": 0,
@@ -3910,7 +3981,7 @@ def clientBot(op):
                             #print ("Post Liked")
 		
                     if msg.contentType == 0 and sender not in clientMid and msg.toType == 2:
-                        if "MENTION" in msg.contentMetadata.keys() != None and settings["responMentionnya"]==True:
+                        if "MENTION" in msg.contentMetadata.keys() != None and settings["autoResponMention"]==True:
                             contact = client.getContact(msg._from)
                             cName = contact.displayName
                             text = msg.text
@@ -3963,7 +4034,7 @@ def clientBot(op):
                                     }
                                 }
                             for mention in mentionees:
-                                if mention['M'] in ayamMid:
+                                if mention['M'] in clientMid:
                                     client.sendFlex(msg.to,pesannya)
                                     break
                 backupData()
